@@ -1,38 +1,284 @@
-.App {
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: rgb(250, 252, 240);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Main App Container */
+.app-container {
+  width: 900px;
+  max-width: 1800px;
+  height: 85vh;
+  background: rgb(184, 235, 243);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* Header */
+.header {
+  background-color: purple;
+  color: white;
+  padding: 10px;
   text-align: center;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.store-title {
+  font-size: 22px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.product-count {
+  font-size: 14px;
+  color: rgb(127, 21, 165);
+  background-color: #d8b6ff;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-weight: bold;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Controls */
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(184, 235, 243);
+  padding: 12px;
+  border-radius: 10px;
+  margin-top: 10px;
+  box-sizing: border-box;
+  gap: 10px;
+}
+
+.add-button {
+  background-color: darkorange;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-sizing: border-box;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+  background-color: #cc5500; /* Darker orange on hover */
+}
+
+.search-box,
+.sort-dropdown {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  flex: 1;
+  box-sizing: border-box;
+}
+
+/* Main Layout */
+.main-layout {
+  display: flex;
+  gap: 25px;
+  margin-top: 15px;
+  height: calc(100% - 110px);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Product List */
+.product-list {
+  width: 55%;
+  padding: 10px;
+  background-color: #ffd580;
+  border-radius: 10px;
+  font-size: 16px;
+  height: 100%;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+/* Product Card */
+.product-card {
+  background: white;
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-bottom: 6px;
+  box-sizing: border-box;
+  height: auto;
+  min-height: 50px;
+  max-height: 90px;
+  overflow: hidden;
+  gap: 5px;
+  flex-grow: 1;
+}
+
+.product-card:hover {
+  background-color: #f3f3f3;
+  transform: scale(1.02);
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-grow: 1;
+}
+
+.product-title {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+.product-description {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 2px;
+}
+
+.product-price {
+  font-size: 12px;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Delete Button */
+.delete-button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.delete-button:hover {
+  background-color: darkred;
+}
+
+/* Details Panel (Product Form) */
+.details-panel {
+  width: 45%;
+  padding: 14px;
+  background: green;
+  color: white;
+  border-radius: 10px;
+  font-size: 16px;
+  height: 100%;
+  box-sizing: border-box;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.product-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 5px;
+  display: block;
+  margin-bottom: 15px;
+}
+
+/* Form Fields */
+.input-field {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: black;
+  box-sizing: border-box;
+}
+
+.input-field:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Save Button */
+.save-button {
+  background-color: #007bff;
   color: white;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.App-link {
-  color: #61dafb;
+.save-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.save-button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+/* Pagination */
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: absolute;
+  bottom: 20px;
+  right: 50%;
+  transform: translateX(50%);
+}
+
+.pagination {
+  display: flex;
+  gap: 5px;
+  min-width: 200px;
+  justify-content: center;
+}
+
+/* Default pagination button style */
+.pagination button {
+  background-color: white; /* White background */
+  color: #007bff; /* Blue text */
+  border: 1px solid #007bff; /* Blue border */
+  padding: 8px 14px;
+  margin: 0 3px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Active page button */
+.pagination button.active {
+  background-color: #007bff; /* Blue background */
+  color: white; /* White text */
+  border: 1px solid #007bff;
+}
+
+/* Hover effect */
+.pagination button:hover:not(.active) {
+  background-color: #f0f8ff; /* Light blue tint */
+  color: #0056b3; /* Darker blue */
 }
